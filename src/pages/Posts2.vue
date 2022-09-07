@@ -5,7 +5,7 @@
       <ul>
         <li v-for="edge in $page.posts.edges" :key="edge.node.id">
             <!-- <router-link to="/">{{edge.node.title}}</router-link> -->
-            <g-link to="/">{{edge.node.title}}</g-link>
+            <g-link :to="edge.node.path">{{edge.node.title}}</g-link>
         </li>
       </ul>
     </div>
@@ -20,6 +20,7 @@ query{
         id
         title
         content
+        path
       }
     }
     }

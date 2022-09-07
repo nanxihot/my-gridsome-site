@@ -9,7 +9,10 @@
 export default {
     name:'FooPage',
     metaInfo:{
-        title:"Foo"
+        title:"Foo",
+        meta:[
+            {name:'author',content:'NanXi Hot'}// 生成meta标签插入到头部当中
+        ]
     },
     data() {
         return {

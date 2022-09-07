@@ -8,6 +8,9 @@
 <script>
 export default {
     name:'FooPage',
+    metaInfo:{
+        title:"Foo"
+    },
     data() {
         return {
 

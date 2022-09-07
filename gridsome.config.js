@@ -5,8 +5,8 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: '魔都的生活', // 可以配置网站的标题 在页面中也能够拿到
+  siteName: '首页', // 可以配置网站的标题 在页面中也能够拿到
   siteDescription:'上海', // 配置meta标签，seo优化 网站的基本介绍
-  titleTemplate:'%s-<siteName>', // 标题的模板
+  titleTemplate:'%s-魔都的生活', // 标题的模板
   plugins: [],
 }

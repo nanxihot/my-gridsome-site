@@ -17,5 +17,9 @@ module.exports = function (api) {
       path:'/my-page',
       component:'./src/templates/MyPage.vue',
     })
+    createPage({
+      path:'/fun-user/:id(\\d+)', // 使用正则限定id必须是数字，否则不会被匹配到
+      component:'./src/templates/User.vue',
+    })
   })
 }

@@ -22,7 +22,8 @@ module.exports = {
       options: {
         apiURL: 'http://localhost:1337',// strapi接口地址
         queryLimit: 1000, // Defaults to 100 最多查询多少条数据
-        contentTypes: ['post'], // 查询的数据类型
+        contentTypes: ['post','tag'], // 查询的数据类型
+        // typeName:"Strapi"// 生成集合的名字 默认是Strapi
         // singleTypes: ['impressum'], // 单个节点
         // Possibility to login with a Strapi user,
         // when content types are not publicly available (optional).
@@ -32,5 +33,13 @@ module.exports = {
         // }
       }
     }
-  ]
+  ],
+  templates:{
+    StrapiPost:[// 写集合的名字 yougridsome/soure-strapi生成的集合
+      {
+        path:'/post/:id',
+        component:'./src/templates/Post.vue'// 配置末班文件
+      }
+    ]
+  }
 }

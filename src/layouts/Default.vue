@@ -1,7 +1,5 @@
 <template>
-  <div class="layout">
-
-
+  <div >
  <!-- Navigation -->
  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">

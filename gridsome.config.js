@@ -24,7 +24,7 @@ module.exports = {
         queryLimit: 1000, // Defaults to 100 最多查询多少条数据
         contentTypes: ['post','tag'], // 查询的数据类型
         // typeName:"Strapi"// 生成集合的名字 默认是Strapi
-        // singleTypes: ['impressum'], // 单个节点
+        singleTypes: ['general'], // 单个节点 单一数据类型
         // Possibility to login with a Strapi user,
         // when content types are not publicly available (optional).
         // loginData: { // 有些数据是受保护的 需要登录 
@@ -39,6 +39,12 @@ module.exports = {
       {
         path:'/post/:id',
         component:'./src/templates/Post.vue'// 配置末班文件
+      }
+    ],
+    StrapiTag:[
+      {
+        path:'/tag/:id',
+        component:'./src/templates/Tag.vue',
       }
     ]
   }

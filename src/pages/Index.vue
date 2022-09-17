@@ -2,14 +2,15 @@
   <Layout> 
 
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('img/home-bg.jpg')">
+<header class="masthead" 
+:style="{backgroundImage:`url(http://localhost:1337${general.cover.url})`}">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading">
-          <h1>Clean Blog</h1>
-          <span class="subheading">A Blog Theme by Start Bootstrap</span>
+          <h1>{{general.title}}</h1>
+          <span class="subheading">{{general.subtitle}}</span>
         </div>
       </div>
     </div>
@@ -33,7 +34,10 @@
           <a href="#">{{edge.node.created_by.lastname+edge.node.created_by.firstname}}</a>
           on {{edge.node.created_at}}</p>
           <p>
-            <a href="javascript:void()" v-for="tag in edge.node.tags" :key="tag.id">{{tag.title}}</a>
+            <span v-for="tag in edge.node.tags" :key="tag.id">
+              <g-link :to="'/tag/'+tag.id">{{tag.title}}</g-link>
+              &nbsp;&nbsp;
+            </span>
           </p>
       </div>
       <hr>
@@ -112,9 +116,19 @@ query($page:Int){
       }
     }
   }
+   general: allStrapiGeneral{
+    	edges{
+        node{
+          id
+          title
+          subtitle
+          cover{
+            url
+          }
+        }
+      }
+  }
 }
-
-
 </page-query>
 
 
@@ -128,6 +142,11 @@ export default {
   },
   components:{
     Pager
+  },
+  computed:{
+    general(){
+      return this.$page.general.edges[0].node
+    }
   }
 }
 </script>
